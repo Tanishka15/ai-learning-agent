@@ -362,11 +362,14 @@ Would you like me to create a study schedule for these?
   <p><em>Main chat interface with reasoning toggle functionality</em></p>
 </div>
 
-#### Reasoning Chain Visualization
 <div align="center">
-  <img src="docs/images/reasoning-chain.png" alt="6-Step Reasoning Chain" width="700">
-  <p><em>6-Step reasoning process visualization when toggle is ON</em></p>
+  <video width="700" controls>
+    <source src="docs/videos/reasoning-toggle.mp4" type="video/mp4">
+    <p>Your browser does not support the video tag.</p>
+  </video>
+  <p><em>Reasoning chain</em></p>
 </div>
+
 
 #### Google Classroom Integration
 <div align="center">
