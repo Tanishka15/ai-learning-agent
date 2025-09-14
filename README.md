@@ -355,11 +355,11 @@ Would you like me to create a study schedule for these?
 #### Main Interface
 <div align="center">
   <img src="main-interface2.png" alt="AI Learning Agent Main Interface" width="800">
-  <p><em>Main chat interface with reasoning toggle functionality</em></p>
+  <p><em>Main chat interface 1</em></p>
 </div>
 <div align="center">
   <img src="main-interface.png" alt="AI Learning Agent Main Interface" width="800">
-  <p><em>Main chat interface with reasoning toggle functionality</em></p>
+  <p><em>Main chat interface</em></p>
 </div>
 
 <div align="center">
@@ -370,17 +370,10 @@ Would you like me to create a study schedule for these?
   <p><em>Reasoning chain</em></p>
 </div>
 
-
-#### Google Classroom Integration
+#### Chain Reasoning
 <div align="center">
-  <img src="docs/images/classroom-integration.png" alt="Google Classroom Integration" width="700">
-  <p><em>Real-time course data from Google Classroom (8 courses, 89 content items)</em></p>
-</div>
-
-#### Study Plan Generation
-<div align="center">
-  <img src="docs/images/study-plan.png" alt="AI-Generated Study Plan" width="600">
-  <p><em>Personalized study plan generated from classroom content</em></p>
+  <img src="reasoning.png" alt="chain reasoning" width="600">
+  <p><em>chat interface with reasoning toggle functionality</em></p>
 </div>
 
 
