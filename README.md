@@ -381,7 +381,7 @@ Would you like me to create a study schedule for these?
 #### Complete System Demonstration
 <div align="center">
   <video width="800" controls>
-    <source src="docs/videos/full-demo.mp4" type="video/mp4">
+    <source src="docs/videos/full-demo.mov" type="video/mp4">
     <p>Your browser does not support the video tag.</p>
   </video>
   <p><em>Complete walkthrough of AI Learning Agent features (5 minutes)</em></p>
@@ -396,27 +396,7 @@ Would you like me to create a study schedule for these?
   <p><em>Side-by-side comparison: Reasoning ON vs OFF (2 minutes)</em></p>
 </div>
 
-#### Google Classroom Integration Demo
-<div align="center">
-  <video width="700" controls>
-    <source src="docs/videos/classroom-demo.mp4" type="video/mp4">
-    <p>Your browser does not support the video tag.</p>
-  </video>
-  <p><em>Live demonstration of classroom content indexing and querying (3 minutes)</em></p>
-</div>
 
-### 📱 **Mobile Responsive Design**
-<div align="center">
-  <img src="docs/images/mobile-view.png" alt="Mobile Interface" width="300">
-  <img src="docs/images/tablet-view.png" alt="Tablet Interface" width="400">
-  <p><em>Responsive design working on mobile and tablet devices</em></p>
-</div>
-
-### 🔄 **Architecture Diagram**
-<div align="center">
-  <img src="docs/images/architecture-diagram.png" alt="System Architecture" width="900">
-  <p><em>Detailed system architecture showing all components and data flow</em></p>
-</div>
 
 ### Web Interface Layout (ASCII Representation)
 ```
