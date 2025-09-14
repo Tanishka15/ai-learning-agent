@@ -376,25 +376,6 @@ Would you like me to create a study schedule for these?
   <p><em>Personalized study plan generated from classroom content</em></p>
 </div>
 
-### 🎥 **Demo Videos**
-
-#### Complete System Demonstration
-<div align="center">
-  <video width="800" controls>
-    <source src="docs/videos/full-demo.mov" type="video/mp4">
-    <p>Your browser does not support the video tag.</p>
-  </video>
-  <p><em>Complete walkthrough of AI Learning Agent features (5 minutes)</em></p>
-</div>
-
-#### Reasoning Chain Toggle Comparison
-<div align="center">
-  <video width="700" controls>
-    <source src="docs/videos/reasoning-toggle.mp4" type="video/mp4">
-    <p>Your browser does not support the video tag.</p>
-  </video>
-  <p><em>Side-by-side comparison: Reasoning ON vs OFF (2 minutes)</em></p>
-</div>
 
 
 
