@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Classroom Authentication Instructions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .auth-instructions {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            background-color: #2d2d2d;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .step {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="container mt-5">
+        <div class="auth-instructions">
+            <h1 class="mb-4">Google Classroom Authentication</h1>
+            
+            <div class="alert alert-info">
+                <p>Due to OAuth redirect restrictions, you need to follow these steps to authenticate with Google Classroom:</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 1: Run Authentication Tool</h3>
+                <p>Open a terminal in your project directory and run:</p>
+                <div class="code-block">
+                    <code>python classroom_auth_cli.py</code>
+                </div>
+                <p class="mt-2">This will open a browser window for you to authenticate with Google.</p>
+            </div>
+            
+            <div class="step">
+                <h3>Step 2: Complete Google Authentication</h3>
+                <p>In the browser window that opens:</p>
+                <ul>
+                    <li>Sign in with your Google account</li>
+                    <li>Grant the requested permissions for Google Classroom access</li>
+                    <li>Wait for the success message</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3>Step 3: Return to the Application</h3>
+                <p>Once authentication is complete:</p>
+                <div class="d-grid gap-2">
+                    <a href="/" class="btn btn-primary btn-lg">Return to Application</a>
+                </div>
+                <p class="mt-2">Your authentication token has been saved and will be used automatically.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

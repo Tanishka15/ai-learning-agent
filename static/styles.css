@@ -1,0 +1,865 @@
+body {
+    background-color: #1c1c1e;
+    color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar-menu {
+    background-color: #2b2b2d;
+    border-right: 1px solid #404042;
+    padding: 1rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.btn-sidebar {
+    background-color: transparent;
+    color: #f5f5f5;
+    border: none;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.btn-sidebar:hover {
+    background-color: #404042;
+    color: #ffffff;
+}
+
+/* Main content area */
+.main-content {
+    background-color: #363638;
+    border-radius: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chat-messages {
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* Chat bubbles */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    max-width: 85%;
+    position: relative;
+}
+
+.user-message {
+    background-color: #10a37f;
+    color: #ffffff;
+    margin-left: auto;
+    border-radius: 18px 18px 0 18px;
+}
+
+.course-info {
+    background-color: #404042;
+    color: #f5f5f5;
+    margin-right: auto;
+    border-radius: 18px 18px 18px 0;
+}
+
+/* Ensure all form elements have light text */
+.form-label {
+    color: #f5f5f5;
+}
+
+.form-select option {
+    background-color: #2b2b2d;
+    color: #f5f5f5;
+}
+
+/* Enhanced Message Styling */
+.message {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+/* General text styling within messages */
+.message p, .message div, .message span {
+    color: #f5f5f5;
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+/* Enhanced Typography */
+.message h1, .message h2, .message h3, .message h4, .message h5, .message h6 {
+    color: #10a37f;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.message h1 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #10a37f;
+    padding-bottom: 8px;
+}
+
+.message h2 {
+    font-size: 1.3em;
+    color: #10a37f;
+}
+
+.message h3 {
+    font-size: 1.1em;
+    color: #0f8a63;
+}
+
+/* Enhanced text formatting */
+.message strong, .message b {
+    color: #10a37f;
+    font-weight: 600;
+}
+
+.message em, .message i {
+    color: #0f8a63;
+    font-style: italic;
+}
+
+/* Code and technical text */
+.message code {
+    background-color: rgba(108, 117, 125, 0.2);
+    color: #e83e8c;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+.message pre {
+    background-color: rgba(108, 117, 125, 0.1);
+    border-left: 4px solid #6c757d;
+    padding: 12px 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 12px 0;
+}
+
+.message pre code {
+    background: none;
+    padding: 0;
+    color: #f8f9fa;
+}
+
+/* Enhanced Lists */
+.message ul, .message ol {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+.message li {
+    margin: 6px 0;
+    line-height: 1.6;
+}
+
+.message ul li {
+    list-style-type: none;
+    position: relative;
+}
+
+.message ul li:before {
+    content: "•";
+    color: #10a37f;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Numbered lists */
+.message ol li {
+    padding-left: 8px;
+}
+
+/* Blockquotes */
+.message blockquote {
+    border-left: 4px solid #10a37f;
+    padding-left: 16px;
+    margin: 16px 0;
+    font-style: italic;
+    color: #d6d8db;
+    background-color: rgba(16, 163, 127, 0.1);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Tables */
+.message table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    background-color: rgba(64, 64, 66, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.message th, .message td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message th {
+    background-color: rgba(16, 163, 127, 0.2);
+    color: #10a37f;
+    font-weight: 600;
+}
+
+/* Links */
+.message a {
+    color: #10a37f;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+}
+
+.message a:hover {
+    border-bottom-color: #10a37f;
+    color: #0f8a63;
+}
+
+/* Highlighted text */
+.message mark {
+    background-color: rgba(255, 193, 7, 0.3);
+    color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Course and subject mentions */
+.message .course-mention {
+    background-color: rgba(16, 163, 127, 0.2);
+    color: #10a37f;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* Date and time mentions */
+.message .date-mention {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+/* Priority indicators */
+.message .priority-high {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.message .priority-medium {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.message .priority-low {
+    color: #28a745;
+    font-weight: 600;
+}
+
+/* Agent message specific styling */
+.agent-message {
+    background-color: #404042;
+    color: #f5f5f5;
+    margin-right: auto;
+    border-radius: 18px 18px 18px 0;
+    border-left: 3px solid #10a37f;
+}
+
+/* Enhanced agent message with better visual hierarchy */
+.agent-message.enhanced {
+    background: linear-gradient(135deg, #404042 0%, #363638 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.agent-message.enhanced:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Animated typing indicator enhancement */
+.message.typing {
+    opacity: 0.7;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+/* Enhanced scrollbar for chat area */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: #2b2b2d;
+    border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #10a37f;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #0f8a63;
+}
+
+/* Add subtle animations to messages */
+.message {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bulletin Board Styles */
+.bulletin-board {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Spinning animation for refresh button */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.bulletin-board-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bulletin-board-title {
+    color: #10a37f;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+    margin-left: 10px;
+}
+
+.bulletin-board-icon {
+    color: #10a37f;
+    font-size: 1.3em;
+}
+
+.bulletin-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bulletin-item {
+    background: rgba(64, 64, 66, 0.4);
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bulletin-item:hover {
+    background: rgba(64, 64, 66, 0.6);
+    transform: translateX(5px);
+}
+
+.bulletin-item.urgent {
+    border-left-color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.bulletin-item.important {
+    border-left-color: #ffc107;
+    background: rgba(255, 193, 7, 0.1);
+}
+
+.bulletin-item.normal {
+    border-left-color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.bulletin-item-header {
+    display: flex;
+    justify-content: between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.bulletin-item-title {
+    color: #f5f5f5;
+    font-weight: 600;
+    font-size: 1em;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.bulletin-item-course {
+    background: rgba(16, 163, 127, 0.3);
+    color: #10a37f;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.bulletin-item-description {
+    color: #d6d8db;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 8px 0;
+}
+
+.bulletin-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.85em;
+}
+
+.bulletin-item-date {
+    color: #10a37f;
+    font-weight: 500;
+}
+
+.bulletin-item-priority {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.8em;
+}
+
+.bulletin-item-priority.urgent {
+    background: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+}
+
+.bulletin-item-priority.important {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.bulletin-item-priority.normal {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+}
+
+.bulletin-empty {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 20px;
+}
+
+.bulletin-refresh {
+    background: none;
+    border: none;
+    color: #10a37f;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-left: auto;
+}
+
+.bulletin-refresh:hover {
+    background: rgba(16, 163, 127, 0.1);
+    transform: rotate(180deg);
+}
+
+/* Bulletin board loading animation */
+.bulletin-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #10a37f;
+}
+
+.bulletin-loading .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(16, 163, 127, 0.3);
+    border-top: 2px solid #10a37f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive bulletin board */
+@media (max-width: 768px) {
+    .bulletin-board {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .bulletin-item {
+        padding: 12px;
+    }
+    
+    .bulletin-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bulletin-item-course {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .bulletin-item-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
+
+/* Warning and info boxes */
+.message .info-box {
+    background-color: rgba(23, 162, 184, 0.2);
+    border-left: 4px solid #17a2b8;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 12px 0;
+}
+
+.message .warning-box {
+    background-color: rgba(255, 193, 7, 0.2);
+    border-left: 4px solid #ffc107;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 12px 0;
+}
+
+.message .success-box {
+    background-color: rgba(40, 167, 69, 0.2);
+    border-left: 4px solid #28a745;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 12px 0;
+}
+
+/* Fix study plan text */
+.study-plan {
+    color: #f5f5f5;
+}
+
+/* Fix course listing text */
+.topics-list button {
+    color: #f5f5f5;
+}
+
+/* Classroom courses text color */
+#classroom-courses a, 
+#classroom-courses a div, 
+#classroom-courses p,
+#classroom-courses .text-muted {
+    color: #f5f5f5 !important;
+}
+
+/* Stats container text color */
+.stats-container h6, .stats-container h3, .stats-container p, .stats-container div {
+    color: #f5f5f5 !important;
+}
+
+/* Chat history text color */
+.chat-history h5, .chat-history strong, .chat-history div {
+    color: #f5f5f5 !important;
+}
+
+/* Make sure all text in dark areas is light-colored */
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark h6, .bg-dark p, .bg-dark div, .bg-dark span {
+    color: #f5f5f5 !important;
+}
+
+/* Fix any form controls with dark text */
+input.form-control, select.form-control, textarea.form-control, 
+.form-select, .form-control, option, label, .form-label {
+    color: #f5f5f5 !important;
+}
+
+/* Ensure dialog content text is light */
+.modal-content, .dialog-content {
+    color: #f5f5f5;
+}
+
+/* Chat input area */
+.chat-input-area {
+    background-color: #363638;
+    border-top: 1px solid #404042;
+}
+
+.chat-input-area .input-group {
+    background-color: #404042;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.chat-input-area textarea.form-control {
+    background-color: transparent;
+    border: none;
+    color: #f5f5f5;
+    resize: none;
+    padding: 0.5rem 1rem;
+}
+
+.chat-input-area textarea.form-control:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.chat-input-area .btn-primary {
+    background-color: #10a37f;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.chat-input-area .btn-primary:hover {
+    background-color: #0d8c6e;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #363638;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Reasoning Chain Visualization Styles */
+.reasoning-container {
+    background-color: #2b2b2d;
+    font-family: monospace;
+    border: 1px solid #404042;
+    color: #f5f5f5;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.reasoning-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #10a37f;
+    border-bottom: 1px solid #10a37f;
+    padding-bottom: 5px;
+}
+
+.reasoning-step-title {
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #10a37f;
+}
+
+.reasoning-toggle {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Tooltip for reasoning toggle */
+.reasoning-tooltip {
+    cursor: pointer;
+}
+
+/* Study Plan Styling */
+.study-plan {
+    background: rgba(16, 163, 127, 0.1);
+    border-left: 4px solid #10a37f;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.study-plan h1, .study-plan h2, .study-plan h3, .study-plan h4, .study-plan h5, .study-plan h6 {
+    color: #10a37f;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.study-plan h1 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #10a37f;
+    padding-bottom: 8px;
+}
+
+.study-plan h2 {
+    font-size: 1.3em;
+    margin-top: 25px;
+}
+
+.study-plan h3 {
+    font-size: 1.1em;
+    color: #0f8a63;
+}
+
+.study-plan strong {
+    color: #10a37f;
+    font-weight: 600;
+}
+
+.study-plan em {
+    color: #0f8a63;
+    font-style: italic;
+}
+
+.study-plan ul, .study-plan ol {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.study-plan li {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.study-plan p {
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+/* Reasoning Chain Styling */
+.reasoning-container {
+    background: rgba(108, 117, 125, 0.1);
+    border-left: 4px solid #6c757d;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+.reasoning-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6c757d;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid #6c757d;
+    padding-bottom: 8px;
+}
+
+.reasoning-step-title {
+    background: rgba(108, 117, 125, 0.2);
+    padding: 8px 12px;
+    margin: 15px 0 5px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #495057;
+    border-left: 3px solid #6c757d;
+}
+
+.reasoning-container .bi {
+    margin-right: 5px;
+}
+
+/* Typing indicator animation */
+.typing-indicator {
+    padding: 10px 15px;
+    min-width: 60px;
+}
+
+.typing-dots {
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.typing-dots span {
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    opacity: 0.6;
+    display: inline-block;
+    animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typing {
+    0%, 80%, 100% { 
+        transform: scale(0.6);
+    }
+    40% { 
+        transform: scale(1);
+    }
+}

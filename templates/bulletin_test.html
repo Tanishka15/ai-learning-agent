@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin Board Test</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* Bulletin Board Styles */
+        .bulletin-board {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Spinning animation for refresh button */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+
+        .bulletin-item {
+            background: white;
+            border-radius: 8px;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #6c757d;
+            transition: all 0.2s ease;
+        }
+
+        .bulletin-item:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .bulletin-urgent {
+            border-left-color: #dc3545;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+        }
+
+        .bulletin-important {
+            border-left-color: #fd7e14;
+            background: linear-gradient(135deg, #fff8f0 0%, #ffffff 100%);
+        }
+
+        .bulletin-normal {
+            border-left-color: #6c757d;
+        }
+
+        .bulletin-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(108, 117, 125, 0.1);
+            color: #6c757d;
+        }
+
+        .bulletin-urgent .bulletin-icon {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+
+        .bulletin-important .bulletin-icon {
+            background: rgba(253, 126, 20, 0.1);
+            color: #fd7e14;
+        }
+
+        .bulletin-title {
+            font-weight: 600;
+            color: #212529;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .bulletin-description {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .bulletin-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .bulletin-course {
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .bulletin-time {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .bulletin-urgent-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #dc3545;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">
+                            <i class="bi bi-megaphone-fill text-primary me-2"></i>
+                            Bulletin Board
+                        </h5>
+                        <button id="refresh-bulletin-btn" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="bulletin-board" id="bulletin-board">
+                            <!-- Bulletin items will be loaded here -->
+                            <div class="text-center text-muted py-3">
+                                <div class="spinner-border spinner-border-sm" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <div class="mt-2">Loading bulletin board...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Bulletin Board functionality
+        async function loadBulletinBoard() {
+            try {
+                const response = await fetch('/api/bulletin-board');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch bulletin board data');
+                }
+                
+                const data = await response.json();
+                displayBulletinBoard(data.items || []);
+                
+            } catch (error) {
+                console.error('Error loading bulletin board:', error);
+                // Display error message in bulletin board
+                const bulletinBoard = document.querySelector('.bulletin-board');
+                if (bulletinBoard) {
+                    bulletinBoard.innerHTML = `
+                        <div class="text-center text-muted py-3">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            <div>Unable to load bulletin board</div>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        function displayBulletinBoard(items) {
+            const bulletinBoard = document.querySelector('.bulletin-board');
+            if (!bulletinBoard) return;
+            
+            if (!items || items.length === 0) {
+                bulletinBoard.innerHTML = `
+                    <div class="text-center text-muted py-3">
+                        <i class="bi bi-check-circle"></i>
+                        <div>No urgent items</div>
+                        <small>All caught up!</small>
+                    </div>
+                `;
+                return;
+            }
+            
+            const itemsHTML = items.map(item => {
+                const priorityClass = getPriorityClass(item.priority);
+                const typeIcon = getTypeIcon(item.type);
+                
+                return `
+                    <div class="bulletin-item ${priorityClass}" data-priority="${item.priority}">
+                        <div class="d-flex align-items-start">
+                            <div class="bulletin-icon me-2">
+                                <i class="bi ${typeIcon}"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="bulletin-title">${escapeHtml(item.title)}</div>
+                                <div class="bulletin-description">${escapeHtml(item.description)}</div>
+                                <div class="bulletin-meta">
+                                    <span class="bulletin-course">${escapeHtml(item.course)}</span>
+                                    ${item.time_until ? `<span class="bulletin-time ms-2">${escapeHtml(item.time_until)}</span>` : ''}
+                                </div>
+                            </div>
+                            ${item.priority === 'urgent' ? '<div class="bulletin-urgent-indicator"></div>' : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            bulletinBoard.innerHTML = itemsHTML;
+        }
+        
+        function getPriorityClass(priority) {
+            switch (priority) {
+                case 'urgent': return 'bulletin-urgent';
+                case 'important': return 'bulletin-important';
+                default: return 'bulletin-normal';
+            }
+        }
+        
+        function getTypeIcon(type) {
+            switch (type) {
+                case 'assignment': return 'bi-file-text';
+                case 'exam': return 'bi-clipboard-check';
+                case 'quiz': return 'bi-question-circle';
+                case 'announcement': return 'bi-megaphone';
+                default: return 'bi-info-circle';
+            }
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Load bulletin board when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBulletinBoard();
+            
+            // Add refresh button functionality
+            const refreshBulletinBtn = document.getElementById('refresh-bulletin-btn');
+            if (refreshBulletinBtn) {
+                refreshBulletinBtn.addEventListener('click', function() {
+                    this.innerHTML = '<i class="bi bi-arrow-clockwise spin"></i>';
+                    loadBulletinBoard().finally(() => {
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="bi bi-arrow-clockwise"></i>';
+                        }, 1000);
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

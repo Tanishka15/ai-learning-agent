@@ -1,0 +1,61 @@
+# Core dependencies
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+httpx==0.25.2
+aiohttp==3.9.1
+
+# Web scraping
+beautifulsoup4==4.12.2
+selenium==4.15.2
+scrapy==2.11.0
+requests==2.31.0
+
+# AI/ML and NLP
+openai==1.3.7
+anthropic==0.7.8
+transformers==4.36.0
+spacy==3.7.2
+nltk==3.8.1
+sentence-transformers==2.2.2
+
+# Knowledge processing
+networkx==3.2.1
+neo4j==5.14.1
+rdflib==7.0.0
+langchain==0.0.350
+tiktoken==0.5.2
+
+# Database
+
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+pymongo==4.6.0
+
+# Data processing
+pandas==2.1.4
+numpy==1.25.2
+scikit-learn==1.3.2
+
+# Async and concurrency
+asyncio
+aiofiles==23.2.1
+
+# Web interface
+streamlit==1.28.2
+gradio==4.7.1
+
+# Configuration and utilities
+pyyaml==6.0.1
+python-dotenv==1.0.0
+rich==13.7.0
+typer==0.9.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Development
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1

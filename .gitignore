@@ -1,0 +1,74 @@
+# Credentials and tokens
+credentials.json
+token.json
+
+# Virtual environment
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ChromaDB
+classroom_db/
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+# Sensitive authentication files - keep local only
+classroom_token.json
+dev_token.json  
+token.json
+google_classroom_config.py
+*.backup
+
+# Environment files with secrets
+.env
+
+# Local development files
+flask_*.log
+
+# OAuth Tokens and Credentials (keep local only)
+classroom_token.json
+dev_token.json
+token.json
+credentials.json
+.env
+local_credentials_backup/
+agent_memory.db
+*.log
