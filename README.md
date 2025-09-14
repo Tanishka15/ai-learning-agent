@@ -354,7 +354,7 @@ Would you like me to create a study schedule for these?
 
 #### Main Interface
 <div align="center">
-  <img src="docs/images/main-interface.png" alt="AI Learning Agent Main Interface" width="800">
+  <img src="main-interface.png" alt="AI Learning Agent Main Interface" width="800">
   <p><em>Main chat interface with reasoning toggle functionality</em></p>
 </div>
 
