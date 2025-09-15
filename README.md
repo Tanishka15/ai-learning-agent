@@ -1,4 +1,4 @@
-# 🧠 AI Learning Agent with Google Classroom Integration
+# AI Learning Agent with Google Classroom Integration
 
 **Author:** Tanishka Randive  
 **University:** Indian Institute of Technology (IIT) Ropar  
@@ -7,7 +7,7 @@
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 1. [Project Overview](#-project-overview)
 2. [System Architecture](#-system-architecture)
@@ -25,7 +25,7 @@
 
 ---
 
-## � Project Overview
+## Project Overview
 
 The **AI Learning Agent** is an intelligent educational assistant that integrates with Google Classroom to provide personalized learning experiences. It combines advanced reasoning capabilities, retrieval-augmented generation (RAG), and natural language processing to help students manage their academic content effectively.
 
@@ -101,7 +101,7 @@ AI Agent           Agent
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend Technologies
 | Technology | Version | Purpose | Reason for Choice |
@@ -128,7 +128,7 @@ AI Agent           Agent
 
 ---
 
-## 🔧 Component Breakdown
+## Component Breakdown
 
 ### 1. **Web Application Layer** (`app_web.py`)
 - Flask route handlers
@@ -167,7 +167,7 @@ AI Agent           Agent
 
 ---
 
-## 📊 Data Design
+## Data Design
 
 ### Database Schema
 
@@ -248,7 +248,7 @@ http://localhost:5005
 
 ---
 
-## 💬 Usage Examples
+## Usage Examples
 
 ### Basic Query - Reasoning Chain Comparison
 
@@ -297,7 +297,7 @@ Response:
 
 ---
 
-## 📋 Interaction Logs
+## Interaction Logs
 
 ### Sample Chat History
 
@@ -348,9 +348,9 @@ Would you like me to create a study schedule for these?
 
 ---
 
-## 📸 Screenshots & Demo
 
-### 🖼️ **System Screenshots**
+
+### **System Screenshots**
 
 #### Main Interface
 <div align="center">
@@ -410,7 +410,7 @@ Would you like me to create a study schedule for these?
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 ### REST Endpoints
 
@@ -469,7 +469,7 @@ Response: {
 
 ---
 
-## 🎯 Technical Decisions & Rationale
+## Technical Decisions & Rationale
 
 ### Why Google Gemini AI?
 - **Advanced Reasoning**: Superior performance in step-by-step reasoning
@@ -552,7 +552,7 @@ class ReasoningChainManager:
 
 ---
 
-## 🐛 Known Issues & Solutions
+##  Known Issues & Solutions
 
 ### Issue 1: JSON Parsing Warning
 - **Problem**: `Expecting value: line 1 column 1 (char 0)`
@@ -574,7 +574,7 @@ class ReasoningChainManager:
 
 ---
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Current System Performance
 - **Query Response Time**: 2-4 seconds (with reasoning)
@@ -599,31 +599,7 @@ class ReasoningChainManager:
 
 ---
 
-## 📞 Support & Contact
-
-**Developer**: Tanishka Randive  
-**University**: Indian Institute of Technology (IIT) Ropar  
-**Department**: Artificial Intelligence and Data Engineering  
-**Academic Year**: 2025  
-**Project Type**: Educational AI System
-
-For technical support or questions about this project, please refer to the documentation or create an issue in the project repository.
-
----
-
-## 📄 License & Academic Usage
-
-This project is developed for educational purposes as part of the AI and Data Engineering curriculum at IIT Ropar. The implementation demonstrates:
-
-- **Advanced AI Integration**: Multi-model AI system design
-- **Software Architecture**: Clean, scalable system design
-- **API Integration**: Real-world API usage and error handling
-- **User Experience**: Intuitive interface design
-- **Data Engineering**: Vector database and RAG implementation
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **IIT Ropar Faculty**: For guidance in AI and Data Engineering concepts
 - **Google**: For providing Classroom API and Gemini AI access
@@ -633,7 +609,7 @@ This project is developed for educational purposes as part of the AI and Data En
 
 ---
 
-## 📈 Project Timeline
+## Project Timeline
 
 
 ### Key Milestones Achieved:
