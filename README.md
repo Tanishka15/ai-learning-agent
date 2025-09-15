@@ -30,14 +30,14 @@
 The **AI Learning Agent** is an intelligent educational assistant that integrates with Google Classroom to provide personalized learning experiences. It combines advanced reasoning capabilities, retrieval-augmented generation (RAG), and natural language processing to help students manage their academic content effectively.
 
 ### Key Capabilities:
-- 🎓 **Google Classroom Integration**: Seamlessly connects to student's classroom content
-- 🧠 **6-Step Reasoning Chain**: Transparent AI decision-making process
-- 📚 **RAG Knowledge Base**: Intelligent content retrieval and synthesis
-- � **Web Interface**: User-friendly chat interface with reasoning toggle
-- 📊 **Study Plan Generation**: Personalized learning schedules
-- 🔍 **Smart Search**: Context-aware content discovery
+- **Google Classroom Integration**: Seamlessly connects to student's classroom content
+- **6-Step Reasoning Chain**: Transparent AI decision-making process
+- **RAG Knowledge Base**: Intelligent content retrieval and synthesis
+- **Web Interface**: User-friendly chat interface with reasoning toggle
+- **Study Plan Generation**: Personalized learning schedules
+- **Smart Search**: Context-aware content discovery
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ### High-Level Architecture Diagram
 ```
@@ -76,24 +76,24 @@ AI Agent           Agent
 6. **External APIs**: Google Classroom API integration
 ---
 
-## ✨ Features
+##  Features
 
-### 🧠 Reasoning Chain Visualization
+### Reasoning Chain Visualization
 - **6-Step Process**: Query Analysis → Knowledge Search → Relevance Ranking → Context Synthesis → Answer Generation → Response Formatting
 - **Toggle On/Off**: Users can enable/disable reasoning visualization
 - **Transparent AI**: See exactly how the AI processes your questions
 
-### 🎓 Google Classroom Integration
+### Google Classroom Integration
 - **Multi-Course Support**: Handles multiple courses simultaneously
 - **Content Indexing**: Automatically indexes assignments, announcements, and materials
 - **Permission Management**: Robust handling of API scopes and authentication
 
-### 📚 Advanced RAG System
+### Advanced RAG System
 - **Vector Embeddings**: Uses sentence-transformers for semantic search
 - **Intelligent Chunking**: Optimizes content for retrieval accuracy
 - **Context-Aware**: Maintains conversation context across interactions
 
-### 🌐 Web Interface
+### Web Interface
 - **Responsive Design**: Works on desktop and mobile devices
 - **Real-time Chat**: Instant responses with typing indicators
 - **Course Management**: Easy switching between different courses
@@ -198,7 +198,7 @@ AI Agent           Agent
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 ```bash
@@ -525,32 +525,7 @@ class ReasoningChainManager:
             observer.update(step_data)
 ```
 
----
 
-## 🔮 Future Enhancements
-
-### Short-term (1-3 months)
-- [ ] **Mobile App**: React Native mobile application
-- [ ] **Voice Interface**: Speech-to-text query input
-- [ ] **File Upload**: Support for document analysis
-- [ ] **Collaboration**: Multi-student study groups
-- [ ] **Notification System**: Assignment deadline alerts
-
-### Medium-term (3-6 months)
-- [ ] **Advanced Analytics**: Learning pattern analysis
-- [ ] **Multi-Platform Integration**: Canvas, Moodle support
-- [ ] **Personalization Engine**: Individual learning preferences
-- [ ] **Offline Mode**: Local knowledge base caching
-- [ ] **Assessment Tools**: Automated quiz generation
-
-### Long-term (6+ months)
-- [ ] **Multi-language Support**: Support for non-English content
-- [ ] **AI Tutoring Modules**: Personalized teaching workflows
-- [ ] **Advanced Assessment**: Automated grading and feedback
-- [ ] **Enterprise Deployment**: Multi-institution support
-- [ ] **Machine Learning Pipeline**: Continuous learning from interactions
-
----
 
 ##  Known Issues & Solutions
 
