@@ -661,7 +661,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python app.py
+python app_web.py
 ```
 
 ## Configuration
