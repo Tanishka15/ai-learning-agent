@@ -679,20 +679,6 @@ Edit `config.yaml` to customize:
 - API keys
 - Teaching styles
 
-## Examples
-
-```python
-from ai_learning_agent import Agent
-
-# Create an agent
-agent = Agent()
-
-# Learn about a topic
-agent.learn_topic("quantum computing")
-
-# Start an interactive teaching session
-agent.teach_me("machine learning basics")
-```
 
 ## Contributing
 
