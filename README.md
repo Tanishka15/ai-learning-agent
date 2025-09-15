@@ -359,16 +359,9 @@ Would you like me to create a study schedule for these?
 </div>
 <div align="center">
   <img src="main-interface.png" alt="AI Learning Agent Main Interface" width="800">
-  <p><em>Main chat interface</em></p>
+  <p><em>Main chat interface 2</em></p>
 </div>
 
-<div align="center">
-  <video width="700" controls>
-    <source src="docs/videos/reasoning-toggle.mp4" type="video/mp4">
-    <p>Your browser does not support the video tag.</p>
-  </video>
-  <p><em>Reasoning chain</em></p>
-</div>
 
 #### Chain Reasoning
 <div align="center">
