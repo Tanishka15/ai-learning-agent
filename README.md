@@ -408,13 +408,6 @@ Would you like me to create a study schedule for these?
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Demo Features Demonstrated
-1. **Live Reasoning Toggle**: Show difference between reasoning on/off
-2. **Google Classroom Integration**: Real course data (8 courses, 89 content items)
-3. **Real-time Processing**: Query analysis and knowledge base search
-4. **Multi-course Support**: Content from multiple classroom courses
-5. **Responsive Design**: Works on different screen sizes
-
 ---
 
 ## 📚 API Documentation
