@@ -75,7 +75,7 @@ Your answer (A/B/C/D): B
 💡 Explanation: This is what I learned about artificial intelligence...
 ```
 
-## Advanced Setup (Optional)
+## Advanced Setup 
 
 For full functionality with web scraping, NLP, and AI integration:
 
@@ -127,7 +127,7 @@ ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ### Run Full Application
 
 ```bash
-python app.py
+python app_web.py
 ```
 
 ## Configuration
