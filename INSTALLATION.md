@@ -1,170 +1,103 @@
-# Installation and Usage Guide
+# Installation Guide
 
-## Quick Start
+## Prerequisites
+- Python 3.9+
+- Git
+- Google Cloud Console Account (for Classroom integration)
 
-### 1. Clone or Download the Project
+## Quick Setup
 
-Make sure you have the AI Learning Agent project in your directory:
-```
-/Users/harshmodi/Desktop/Agent/2.0/
-```
-
-### 2. Set Up Virtual Environment
-
+### 1. Clone Repository
 ```bash
-cd /Users/harshmodi/Desktop/Agent/2.0
+git clone https://github.com/Tanishka15/ai-learning-agent.git
+cd ai-learning-agent
+```
+
+### 2. Create Virtual Environment
+```bash
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-### 3. Install Basic Dependencies
-
+### 3. Install Dependencies
 ```bash
-pip install pyyaml python-dotenv rich typer
+pip install -r requirements.txt
 ```
 
-### 4. Run the Demo
-
-```bash
-python demo.py
-```
-
-## Demo Usage
-
-Once the demo is running, you can use these commands:
-
-- `learn <topic>` - Research and learn about a topic
-  - Example: `learn quantum computing`
-  
-- `ask <question>` - Ask a question about learned topics
-  - Example: `ask what is quantum computing?`
-  
-- `quiz <topic>` - Take a quiz about a learned topic
-  - Example: `quiz quantum computing`
-  
-- `topics` - List all topics you've learned about
-  
-- `help` - Show available commands
-  
-- `quit` - Exit the demo
-
-## Example Session
-
-```
-> learn artificial intelligence
-🔍 Researching 'artificial intelligence'...
-✅ Successfully learned about 'artificial intelligence'!
-📝 Summary: This is what I learned about artificial intelligence...
-🧠 Key concepts: fundamental artificial intelligence, artificial intelligence principles, artificial intelligence applications
-
-> ask what is artificial intelligence?
-🤔 Thinking about: what is artificial intelligence?
-💡 Answer: Based on what I learned about artificial intelligence: This is what I learned about artificial intelligence. It's an important concept that involves multiple aspects and applications.
-
-> quiz artificial intelligence
-🎯 Quick Quiz: artificial intelligence
-==============================
-Question: What is artificial intelligence?
-A) A simple concept
-B) A fundamental concept with multiple aspects
-C) An outdated theory
-D) None of the above
-
-Your answer (A/B/C/D): B
-✅ Correct! Great job!
-💡 Explanation: This is what I learned about artificial intelligence...
-```
-
-## Advanced Setup 
-
-For full functionality with web scraping, NLP, and AI integration:
-
-### Install Additional Dependencies
-
-```bash
-# Web scraping
-pip install requests beautifulsoup4 selenium aiohttp httpx
-
-# Natural Language Processing
-pip install nltk spacy sentence-transformers
-
-# AI/ML Integration
-pip install openai anthropic transformers
-
-# Database support
-pip install sqlalchemy psycopg2-binary pymongo
-
-# Web interface
-pip install fastapi uvicorn streamlit gradio
-
-# Data processing
-pip install pandas numpy scikit-learn networkx
-```
-
-### Download NLP Models
-
-```bash
-# NLTK data
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords')"
-
-# spaCy model
-python -m spacy download en_core_web_sm
-```
-
-### Set Up API Keys
-
-1. Copy the environment template:
+### 4. Configure Environment
 ```bash
 cp .env.example .env
 ```
 
-2. Edit `.env` and add your API keys:
-```
-OPENAI_API_KEY=your_openai_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+Edit `.env` with your API keys:
+```env
+GOOGLE_GEMINI_API_KEY=your_gemini_api_key_here
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-### Run Full Application
+### 5. Initialize Database
+```bash
+python -c "from classroom_agent import initialize_db; initialize_db()"
+```
 
+### 6. Run Application
 ```bash
 python app_web.py
 ```
 
-## Configuration
+Access at: `http://localhost:5005`
 
-Edit `config.yaml` to customize:
+## Google Classroom Setup (Optional)
 
-- Data source settings
-- AI model preferences
-- Learning parameters
-- API configurations
-- Logging levels
+1. Create Google Cloud Project
+2. Enable Classroom API
+3. Download `credentials.json` to project root
+4. Run authentication:
+```bash
+python google_classroom_auth.py
+```
+
+## Available Features
+
+### Web Interface
+- AI Chat with 6-step reasoning visualization
+- Google Classroom integration
+- Interactive bulletin board
+- Study plan generation
+- Course management
+
+### API Endpoints
+- `/chat` - AI conversation with reasoning toggle
+- `/api/courses` - List enrolled courses
+- `/api/study-plan` - Generate personalized study plans
+- `/api/bulletin-board` - Get announcements and assignments
+- `/api/search` - Search classroom content
 
 ## Troubleshooting
 
-### Python Not Found
-- Use `python3` instead of `python`
-- Make sure Python 3.7+ is installed
+### Port Issues
+```bash
+lsof -ti:5005 | xargs kill -9
+```
 
-### Permission Errors
-- Use virtual environment (recommended)
-- Or add `--user` flag: `pip install --user package_name`
+### Missing Dependencies
+```bash
+pip install --upgrade -r requirements.txt
+```
 
-### Import Errors
-- Make sure virtual environment is activated
-- Install missing dependencies
-- Check Python path
+### Database Reset
+```bash
+rm -rf chroma_db/
+python -c "from classroom_agent import initialize_db; initialize_db()"
+```
 
-### API Errors
-- Verify API keys in `.env` file
-- Check internet connection
-- Ensure API quotas aren't exceeded
+### Authentication Issues
+- Verify `credentials.json` is in project root
+- Check Google Cloud Console API enablement
+- Ensure OAuth2 redirect URLs match
 
-## Support
-
-For issues or questions:
-1. Check this guide
-2. Review error messages
-3. Ensure all dependencies are installed
-4. Verify configuration files
-5. Check logs in `logs/` directory
+### Reasoning Chain Not Working
+- Verify Gemini API key in `.env`
+- Check API quota limits
+- Ensure `show_reasoning=true` in requests
